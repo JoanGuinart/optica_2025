@@ -29,15 +29,6 @@ body {
 /* RESET CSS */
 /* RESET MEJORADO - Compatible con Next.js */
 
-/* Box sizing reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 /* Elementos básicos */
 html,
 body {
