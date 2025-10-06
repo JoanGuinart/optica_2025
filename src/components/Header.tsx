@@ -3,6 +3,7 @@
 import Link from "next/link";
 import styles from "../styles/Header.module.scss";
 import { useEffect, useState } from "react";
+import { isUnderConstruction } from "@/lib/under-construction";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,13 +58,29 @@ const Header = () => {
               { href: "/faq", label: "FAQ" },
               { href: "/products", label: "Productes" },
               { href: "/services", label: "Serveis" },
-            ].map(({ href, label }) => (
-              <li key={href}>
-                <Link href={href} onClick={() => setIsMenuOpen(false)}>
-                  {label}
-                </Link>
-              </li>
-            ))}
+            ].map(({ href, label }) => {
+              const underConstruction = isUnderConstruction();
+              
+              return (
+                <li key={href}>
+                  {underConstruction ? (
+                    <span 
+                      className={styles.disabledLink}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        alert('Esta sección estará disponible muy pronto. ¡Gracias por tu paciencia!');
+                      }}
+                    >
+                      {label}
+                    </span>
+                  ) : (
+                    <Link href={href} onClick={() => setIsMenuOpen(false)}>
+                      {label}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
