@@ -6,10 +6,6 @@ export default function Home() {
   return (
     <div className="w-full">
       <h1 className="e1">MAIN PAGE</h1>
-
-      <Banner_one />
-      <Banner_two />
-      <Banner_three />
     </div>
   );
 }
