@@ -12,15 +12,21 @@ const Portada = () => {
           alt="Óptica Guinart - Gafas y lentes de calidad"
           fill
           className="object-cover object-center"
+          style={{
+            maskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)'
+          }}
           priority
         />
         {/* Overlay más fuerte para mejor contraste */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/70 to-black/60"></div>
+        {/* Gradiente de fusión hacia el siguiente bloque oscuro */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 lg:h-48 bg-gradient-to-b from-transparent via-slate-800 to-slate-900"></div>
       </div>
 
       {/* Contenido principal */}
       <div className="relative z-10 flex min-h-screen items-center justify-center py-8 px-4 sm:px-8 lg:px-12">
-        <div className="max-w-4xl text-center text-white">
+        <div className="max-w-5xl text-center text-white">
           <div className="mb-6 sm:mb-8 lg:mb-12">
             <h1 className="text-4xl font-black tracking-tight sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-3 sm:mb-6 font-sans">
               <span className="block text-white drop-shadow-[0_8px_32px_rgba(0,0,0,0.8)]">ÓPTICA</span>
@@ -57,7 +63,7 @@ const Portada = () => {
             <div className="flex flex-col items-center p-3 sm:p-6 bg-black/40 rounded-lg sm:rounded-xl backdrop-blur-md border border-emerald-400/20">
               <div className="w-12 h-12 sm:w-16 sm:h-16 mb-2 sm:mb-4 flex items-center justify-center bg-emerald-500 rounded-lg sm:rounded-xl shadow-lg">
                 <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 515.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 919.288 0M15 7a3 3 0 11-6 0 3 3 0 616 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
               <p className="text-sm sm:text-lg font-bold tracking-wide text-center">ATENCIÓN PERSONALIZADA</p>
@@ -82,12 +88,12 @@ const Portada = () => {
         </div>
       </div>
 
-      {/* Indicador de scroll hacia abajo - solo en desktop */}
+      {/* Indicador de scroll hacia abajo - solo en desktop
       <div className="hidden sm:block absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 animate-bounce">
         <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
-      </div>
+      </div> */}
     </section>
   );
 };

@@ -33,7 +33,10 @@ body {
 html,
 body {
   height: 100%;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
 }
 
 /* Reset para elementos interactivos (NO usar all:initial) */
@@ -42,9 +45,10 @@ input,
 textarea,
 select {
   font: inherit;
-  background: none;
-  border: none;
   appearance: none;
+}
+button {
+  cursor: pointer;
 }
 
 /* Enlaces */

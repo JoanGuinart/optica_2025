@@ -1,6 +1,7 @@
 import { isUnderConstruction } from "@/lib/under-construction";
 import { UnderConstructionPage } from "@/components/UnderConstructionPage";
 import Portada from "@/components/Portada";
+import MainContent from "@/components/MainContent";
 
 export default async function Home() {
   // Verificar si debemos mostrar la página en construcción
@@ -12,8 +13,9 @@ export default async function Home() {
   }
 
   return (
-      <main>
-        <Portada />
-      </main>
+    <main>
+      <Portada />
+      <MainContent />
+    </main>
   );
 }
